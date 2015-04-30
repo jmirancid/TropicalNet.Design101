@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9259A54E-5B35-48D2-918F-6D7AD4EDBD92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Design101.Business</RootNamespace>
+    <AssemblyName>Design101.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Definitions\DocumentBusiness.cs" />
+    <Compile Include="Definitions\RoleBusiness.cs" />
+    <Compile Include="Definitions\UserBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TropicalNet.Framework\trunk\Framework.Business\Framework.Business.csproj">
+      <Project>{67A2BF12-D86A-4023-BF3C-81504CFC1CE3}</Project>
+      <Name>Framework.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TropicalNet.Framework\trunk\Framework.Entities\Framework.Entities.csproj">
+      <Project>{9489546F-974D-469B-804B-60DB8A53DF5E}</Project>
+      <Name>Framework.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TropicalNet.Framework\trunk\Framework.Interfaces\Framework.Interfaces.csproj">
+      <Project>{E0371FF6-0E27-490C-A8A9-A6D55716F6D3}</Project>
+      <Name>Framework.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Design101.Entities\Design101.Entities.csproj">
+      <Project>{5CA6E716-A009-4C80-9449-5145B2B05762}</Project>
+      <Name>Design101.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Design101.Interfaces\Design101.Interfaces.csproj">
+      <Project>{72FF3CB0-CD10-4503-934C-AC533E047EC5}</Project>
+      <Name>Design101.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
