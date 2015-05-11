@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Design101.Entities.Resources;
 using Framework.Entities;
 using Framework.Entities.Resources;
@@ -19,6 +20,11 @@ namespace Design101.Entities
                 UserId = value;
             }
         }
+
+        public User()
+        {
+            this.Registered = DateTime.Now;
+        }
     }
 
     public class User_Metadata
@@ -31,15 +37,24 @@ namespace Design101.Entities
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
         public string Name { get; set; }
 
+        [Display(Name = "Entity_Location", ResourceType = typeof(Ent_UserResource))]
+        public string Location { get; set; }
+
+        [Display(Name = "Entity_Address", ResourceType = typeof(Ent_UserResource))]
+        public string Address { get; set; }
+
         [Display(Name = "Entity_Phone", ResourceType = typeof(Ent_UserResource))]
         public string Phone { get; set; }
+
+        [Display(Name = "Entity_Mobile", ResourceType = typeof(Ent_UserResource))]
+        public string Mobile { get; set; }
 
         [Display(Name = "Entity_Email", ResourceType = typeof(Ent_UserResource))]
         public string Email { get; set; }
 
-        [Display(Name = "Entity_Login", ResourceType = typeof(Ent_UserResource))]
+        [Display(Name = "Entity_Username", ResourceType = typeof(Ent_UserResource))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
-        public string Login { get; set; }
+        public string Username { get; set; }
 
         [Display(Name = "Entity_Password", ResourceType = typeof(Ent_UserResource))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
@@ -48,5 +63,12 @@ namespace Design101.Entities
         [Display(Name = "Entity_Enabled", ResourceType = typeof(Ent_UserResource))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
         public bool Enabled { get; set; }
+
+        [Display(Name = "Entity_Registered", ResourceType = typeof(Ent_UserResource))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
+        public System.DateTime Registered { get; set; }
+
+        [Display(Name = "Entity_Login", ResourceType = typeof(Ent_UserResource))]
+        public System.DateTime Login { get; set; }
     }
 }

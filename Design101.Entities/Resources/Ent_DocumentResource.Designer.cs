@@ -70,6 +70,15 @@ namespace Design101.Entities.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assigned.
+        /// </summary>
+        public static string Entity_Assigned {
+            get {
+                return ResourceManager.GetString("Entity_Assigned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Entity_Description {

@@ -49,11 +49,16 @@ CREATE TABLE dbo.[User] (
   UserId int IDENTITY(1, 1) NOT NULL,
   RoleId int NOT NULL,
   Name nvarchar(80) COLLATE Modern_Spanish_CI_AS NOT NULL,
+  Location nvarchar(80) COLLATE Modern_Spanish_CI_AS NULL,
+  Address nvarchar(120) COLLATE Modern_Spanish_CI_AS NULL,
   Phone nvarchar(30) COLLATE Modern_Spanish_CI_AS NULL,
+  Mobile nvarchar(30) COLLATE Modern_Spanish_CI_AS NULL,
   Email nvarchar(30) COLLATE Modern_Spanish_CI_AS NULL,
-  Login nvarchar(20) COLLATE Modern_Spanish_CI_AS NOT NULL,
-  Password nvarchar(8) COLLATE Modern_Spanish_CI_AS NOT NULL,
-  Enabled bit NOT NULL
+  Username nvarchar(20) COLLATE Modern_Spanish_CI_AS NOT NULL,
+  Password nvarchar(16) COLLATE Modern_Spanish_CI_AS NOT NULL,
+  Enabled bit NOT NULL,
+  Registered datetime NOT NULL,
+  Login datetime NULL
 )
 ON [PRIMARY]
 GO
@@ -69,7 +74,8 @@ CREATE TABLE dbo.Document (
   Description nvarchar(max) COLLATE Modern_Spanish_CI_AS NULL,
   Path nvarchar(max) COLLATE Modern_Spanish_CI_AS NOT NULL,
   Enabled bit NOT NULL,
-  Priority int NULL
+  Priority int NULL,
+  Assigned datetime NOT NULL
 )
 ON [PRIMARY]
 GO
@@ -103,8 +109,8 @@ ON [PRIMARY]
 GO
 
 ALTER TABLE dbo.[User]
-ADD CONSTRAINT UQ_User_Login 
-UNIQUE NONCLUSTERED (Login)
+ADD CONSTRAINT UQ_User_Username 
+UNIQUE NONCLUSTERED (Username)
 WITH (
   PAD_INDEX = OFF,
   IGNORE_DUP_KEY = OFF,

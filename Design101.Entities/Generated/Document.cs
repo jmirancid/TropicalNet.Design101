@@ -74,6 +74,12 @@ namespace Design101.Entities
             get;
             set;
         }
+    
+        public virtual System.DateTime Assigned
+        {
+            get;
+            set;
+        }
 
         #endregion
         #region Navigation Properties

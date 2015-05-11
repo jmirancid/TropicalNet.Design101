@@ -1,0 +1,74 @@
+﻿@using Framework.MVC.Resources
+@using Framework.MVC.Extensions
+@using Design101.Entities.Resources
+
+@model Design101.Entities.User
+
+@section Styles
+{
+    <link href="@Url.Content("~/Content/Styles/Main.css")" rel="stylesheet" />
+    <style type="text/css">
+        body
+        {
+            padding-top: 60px;
+            background-color:silver;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-lg-5">
+        <fieldset>
+            <legend>@Ent_UserResource._Caption @PersistanceResource.Details</legend>
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoleId)
+                <span class="form-control">@Html.DisplayEnumFor(model => model.RoleId, typeof(Design101.Entities.Role_Enum))</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name)
+                <span class="form-control">@Html.DisplayFor(model => model.Name)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username)
+                <span class="form-control">@Html.DisplayFor(model => model.Username)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password)
+                <span class="form-control">@Html.DisplayFor(model => model.Password)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Enabled)
+                @Html.DisplayFor(model => model.Enabled)
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-link" })
+            </p>
+        </fieldset>
+    </div>
+    <div class="col-lg-5">
+        <fieldset>
+            <legend>Additional Info</legend>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Location)
+                <span class="form-control">@Html.DisplayFor(model => model.Location)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address)
+                <span class="form-control">@Html.DisplayFor(model => model.Address)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone)
+                <span class="form-control">@Html.DisplayFor(model => model.Phone)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Mobile)
+                <span class="form-control">@Html.DisplayFor(model => model.Mobile)</span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email)
+                <span class="form-control">@Html.DisplayFor(model => model.Email)</span>
+            </div>
+        </fieldset>
+    </div>
+</div>

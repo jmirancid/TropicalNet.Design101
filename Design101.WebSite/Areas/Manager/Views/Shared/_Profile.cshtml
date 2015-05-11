@@ -1,0 +1,22 @@
+﻿@using Design101.WebSite.Resources
+
+@model Design101.Entities.User
+
+<div class="dash-unit">
+    <dtitle>@Localization.Dashboard_UserProfile</dtitle>
+    <hr />
+    <div class="thumbnail">
+        <img src="@Url.Content("~/Content/Images/face80x80.jpg")" alt="Marcel Newman" class="img-circle" />
+    </div>
+    <h1>
+        @Model.Name</h1>
+    <h3>
+        @Model.Role.Name</h3>
+    <br />
+    <div class="info-user">
+        <a href="@Url.Action("Details", "User", new { id = Model.Id })"><span aria-hidden="true" class="li_user fs1"></span></a>
+        <a href="@Url.Action("Edit", "User", new { id = Model.Id })"><span aria-hidden="true" class="li_settings fs1"></span></a>
+        <a href="mailto:@Model.Email"><span aria-hidden="true" class="li_mail fs1"></span></a>
+        <span aria-hidden="true" class="li_key fs1"></span>
+    </div>
+</div>

@@ -70,6 +70,15 @@ namespace Design101.Entities.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Entity_Address {
+            get {
+                return ResourceManager.GetString("Entity_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Entity_Email {
@@ -88,11 +97,29 @@ namespace Design101.Entities.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string Entity_Location {
+            get {
+                return ResourceManager.GetString("Entity_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Login.
         /// </summary>
         public static string Entity_Login {
             get {
                 return ResourceManager.GetString("Entity_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Entity_Mobile {
+            get {
+                return ResourceManager.GetString("Entity_Mobile", resourceCulture);
             }
         }
         
@@ -124,11 +151,29 @@ namespace Design101.Entities.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registered.
+        /// </summary>
+        public static string Entity_Registered {
+            get {
+                return ResourceManager.GetString("Entity_Registered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Role.
         /// </summary>
         public static string Entity_Role {
             get {
                 return ResourceManager.GetString("Entity_Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Entity_Username {
+            get {
+                return ResourceManager.GetString("Entity_Username", resourceCulture);
             }
         }
     }

@@ -1,8 +1,23 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using Design101.WebSite.Resources
+
+@{
+    ViewBag.Title = "101 AudioDesign";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+<table width="1000" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+        <td>
+            <img src="@Url.Content("~/Content/Images/101-top.jpg")" width="1000" height="259" alt="" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="@Url.Content("~/Content/Images/101-mixer.jpg")" width="1000" height="603" alt="" />
+        </td>
+    </tr>
+    <tr>
+        <td height="51" align="center" background="@Url.Content("~/Content/Images/101-footer.jpg")">
+            @Html.ActionLink(@Localization.Login, "LogOn", "Account")
+        </td>
+    </tr>
+</table>

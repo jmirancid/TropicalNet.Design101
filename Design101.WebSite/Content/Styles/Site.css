@@ -1,0 +1,18 @@
+﻿body
+{
+	background-color: #000000;
+	margin-top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #17D801;
+}
+
+a
+{
+    font-family: Arial, Helvetica, sans-serif;
+	color: #17D801;
+}
+
+table
+{
+    border-collapse: collapse;
+}

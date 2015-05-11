@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using Design101.Entities.Resources;
 using Framework.Entities;
 using Framework.Entities.Resources;
@@ -18,6 +20,11 @@ namespace Design101.Entities
             {
                 DocumentId = value;
             }
+        }
+
+        public Document()
+        {
+            this.Assigned = DateTime.Now;
         }
     }
 
@@ -44,5 +51,9 @@ namespace Design101.Entities
 
         [Display(Name = "Entity_Priority", ResourceType = typeof(Ent_DocumentResource))]
         public int Priority { get; set; }
+
+        [Display(Name = "Entity_Assigned", ResourceType = typeof(Ent_DocumentResource))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
+        public System.DateTime Assigned { get; set; }
     }
 }

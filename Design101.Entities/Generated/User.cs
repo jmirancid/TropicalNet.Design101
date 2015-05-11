@@ -51,7 +51,25 @@ namespace Design101.Entities
             set;
         }
     
+        public virtual string Location
+        {
+            get;
+            set;
+        }
+    
+        public virtual string Address
+        {
+            get;
+            set;
+        }
+    
         public virtual string Phone
+        {
+            get;
+            set;
+        }
+    
+        public virtual string Mobile
         {
             get;
             set;
@@ -63,7 +81,7 @@ namespace Design101.Entities
             set;
         }
     
-        public virtual string Login
+        public virtual string Username
         {
             get;
             set;
@@ -76,6 +94,18 @@ namespace Design101.Entities
         }
     
         public virtual bool Enabled
+        {
+            get;
+            set;
+        }
+    
+        public virtual System.DateTime Registered
+        {
+            get;
+            set;
+        }
+    
+        public virtual Nullable<System.DateTime> Login
         {
             get;
             set;

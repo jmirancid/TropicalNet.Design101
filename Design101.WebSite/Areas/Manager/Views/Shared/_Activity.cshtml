@@ -1,0 +1,23 @@
+﻿@using Design101.WebSite.Resources
+
+@model Design101.WebSite.Areas.Manager.Models.DashboardModel
+
+<div class="dash-unit">
+    <dtitle>Resume</dtitle>
+    <hr>
+    <div class="info-user">
+        <span aria-hidden="true" class="li_news fs2"></span>
+    </div>
+    <br>
+    <div class="cont">
+        <p>
+            <bold>@Model.Users</bold>
+            |
+            <ok>Total Users</ok>
+        </p>
+        <br>
+        <p>
+            <bold>@Model.Documents</bold>
+            | Total Documents</p>
+    </div>
+</div>

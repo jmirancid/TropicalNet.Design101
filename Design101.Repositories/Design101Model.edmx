@@ -29,6 +29,7 @@
           <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
           <Property Name="Priority" Type="int" />
+          <Property Name="Assigned" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -45,11 +46,16 @@
           <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RoleId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="80" />
-          <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="Location" Type="nvarchar" MaxLength="80" />
+          <Property Name="Address" Type="nvarchar" MaxLength="120" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="30" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="30" />
+          <Property Name="Email" Type="nvarchar" MaxLength="30" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="16" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Registered" Type="datetime" Nullable="false" />
+          <Property Name="Login" Type="datetime" />
         </EntityType>
         <Association Name="FK_Document_User">
           <End Role="User" Type="Design101Model.Store.User" Multiplicity="1" />
@@ -103,6 +109,7 @@
           <Property Type="String" Name="Path" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Enabled" Nullable="false" />
           <Property Type="Int32" Name="Priority" />
+          <Property Type="DateTime" Name="Assigned" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Design101Model.FK_Document_User" FromRole="Document" ToRole="User" />
         </EntityType>
         <EntityType Name="Role">
@@ -121,11 +128,16 @@
           <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="RoleId" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Phone" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Login" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Enabled" Nullable="false" />
+          <Property Type="DateTime" Name="Registered" Nullable="false" />
+          <Property Type="DateTime" Name="Login" />
           <NavigationProperty Name="Documents" Relationship="Design101Model.FK_Document_User" FromRole="User" ToRole="Document" />
           <NavigationProperty Name="Role" Relationship="Design101Model.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
@@ -162,6 +174,7 @@
           <EntitySetMapping Name="Document">
             <EntityTypeMapping TypeName="Design101Model.Document">
               <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="Assigned" ColumnName="Assigned" />
                 <ScalarProperty Name="Priority" ColumnName="Priority" />
                 <ScalarProperty Name="Enabled" ColumnName="Enabled" />
                 <ScalarProperty Name="Path" ColumnName="Path" />
@@ -184,11 +197,16 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="Design101Model.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
                 <ScalarProperty Name="Enabled" ColumnName="Enabled" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -217,16 +235,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Design101Model">
-        <EntityTypeShape EntityType="Design101Model.Document" Width="1.5" PointX="5.25" PointY="1.125" Height="2.5571907552083317" />
-        <EntityTypeShape EntityType="Design101Model.Role" Width="1.5" PointX="0.75" PointY="1.5" Height="1.7879850260416665" />
-        <EntityTypeShape EntityType="Design101Model.User" Width="1.5" PointX="3" PointY="1" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="Design101Model.Document" Width="1.5" PointX="5.25" PointY="1.625" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="Design101Model.Role" Width="1.5" PointX="0.75" PointY="2.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Design101Model.User" Width="1.5" PointX="3" PointY="1" Height="3.9033007812499996" />
         <AssociationConnector Association="Design101Model.FK_Document_User" >
-          <ConnectorPoint PointX="4.5" PointY="2.4035953776041659" />
-          <ConnectorPoint PointX="5.25" PointY="2.4035953776041659" />
+          <ConnectorPoint PointX="4.5" PointY="2.99974609375" />
+          <ConnectorPoint PointX="5.25" PointY="2.99974609375" />
         </AssociationConnector>
         <AssociationConnector Association="Design101Model.FK_User_Role" >
-          <ConnectorPoint PointX="2.25" PointY="2.3939925130208333" />
-          <ConnectorPoint PointX="3" PointY="2.3939925130208333" />
+          <ConnectorPoint PointX="2.25" PointY="3.0189925130208337" />
+          <ConnectorPoint PointX="3" PointY="3.0189925130208337" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

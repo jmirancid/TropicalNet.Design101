@@ -2,9 +2,17 @@
 using Design101.Entities.Resources;
 using Framework.Entities;
 using Framework.Entities.Resources;
+using System;
 
 namespace Design101.Entities
 {
+    [Flags]
+    public enum Role_Enum
+    {
+        Manager = 1,
+        Customer = 2
+    }
+
     [MetadataType(typeof(Role_Metadata))]
     public partial class Role : BaseEntity
     {
