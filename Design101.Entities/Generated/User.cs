@@ -114,40 +114,6 @@ namespace Design101.Entities
         #endregion
         #region Navigation Properties
     
-    	//[XmlElement("Documents", typeof(Collection<Document>))]
-        public virtual ICollection<Document> Documents
-        {
-            get
-            {
-                if (_documents == null)
-                {
-                    var newCollection = new FixupCollection<Document>();
-                    newCollection.CollectionChanged += FixupDocuments;
-                    _documents = newCollection;
-                }
-                return _documents;
-            }
-            set
-            {
-                if (!ReferenceEquals(_documents, value))
-                {
-                    var previousValue = _documents as FixupCollection<Document>;
-                    if (previousValue != null)
-                    {
-                        previousValue.CollectionChanged -= FixupDocuments;
-                    }
-                    _documents = value;
-                    var newValue = value as FixupCollection<Document>;
-                    if (newValue != null)
-                    {
-                        newValue.CollectionChanged += FixupDocuments;
-                    }
-                }
-            }
-        }
-    	//[XmlElement("Documents", typeof(Collection<Document>))]
-        private ICollection<Document> _documents;
-    
         public virtual Role Role
         {
             get { return _role; }
@@ -162,6 +128,40 @@ namespace Design101.Entities
             }
         }
         private Role _role;
+    
+    	//[XmlElement("Document", typeof(Collection<Document>))]
+        public virtual ICollection<Document> Document
+        {
+            get
+            {
+                if (_document == null)
+                {
+                    var newCollection = new FixupCollection<Document>();
+                    newCollection.CollectionChanged += FixupDocument;
+                    _document = newCollection;
+                }
+                return _document;
+            }
+            set
+            {
+                if (!ReferenceEquals(_document, value))
+                {
+                    var previousValue = _document as FixupCollection<Document>;
+                    if (previousValue != null)
+                    {
+                        previousValue.CollectionChanged -= FixupDocument;
+                    }
+                    _document = value;
+                    var newValue = value as FixupCollection<Document>;
+                    if (newValue != null)
+                    {
+                        newValue.CollectionChanged += FixupDocument;
+                    }
+                }
+            }
+        }
+    	//[XmlElement("Document", typeof(Collection<Document>))]
+        private ICollection<Document> _document;
 
         #endregion
         #region Association Fixup
@@ -186,7 +186,7 @@ namespace Design101.Entities
             }
         }
     
-        private void FixupDocuments(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupDocument(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {

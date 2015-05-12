@@ -73,6 +73,7 @@ CREATE TABLE dbo.Document (
   Name nvarchar(60) COLLATE Modern_Spanish_CI_AS NOT NULL,
   Description nvarchar(max) COLLATE Modern_Spanish_CI_AS NULL,
   Path nvarchar(max) COLLATE Modern_Spanish_CI_AS NOT NULL,
+  Size int NOT NULL,
   Enabled bit NOT NULL,
   Priority int NULL,
   Assigned datetime NOT NULL

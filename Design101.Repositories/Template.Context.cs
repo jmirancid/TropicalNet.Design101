@@ -42,12 +42,6 @@ namespace Design101.Repositories
     
         #region ObjectSet Properties
     
-        public ObjectSet<Document> Document
-        {
-            get { return _document  ?? (_document = CreateObjectSet<Document>("Document")); }
-        }
-        private ObjectSet<Document> _document;
-    
         public ObjectSet<Role> Role
         {
             get { return _role  ?? (_role = CreateObjectSet<Role>("Role")); }
@@ -59,6 +53,12 @@ namespace Design101.Repositories
             get { return _user  ?? (_user = CreateObjectSet<User>("User")); }
         }
         private ObjectSet<User> _user;
+    
+        public ObjectSet<Document> Document
+        {
+            get { return _document  ?? (_document = CreateObjectSet<Document>("Document")); }
+        }
+        private ObjectSet<Document> _document;
 
         #endregion
     }

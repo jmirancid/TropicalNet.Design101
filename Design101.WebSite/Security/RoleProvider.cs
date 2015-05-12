@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Helpers;
 using Design101.Business.Definitions;
 
 namespace Design101.WebSite.Security
@@ -50,13 +51,22 @@ namespace Design101.WebSite.Security
 
         public override string[] GetRolesForUser(string username)
         {
-            var u =
+            var cached = WebCache.Get(username);
+
+            if (cached == null)
+            {
+                var u =
                 this._bizUser.GetBy(x => x.Username == username);
 
-            if (u == null)
-                throw new NullReferenceException();
+                if (u == null)
+                    throw new NullReferenceException();
 
-            return new string[] { u.Role.Name };
+                cached = new string[] { u.Role.Name };
+
+                WebCache.Set(username, cached);
+            }
+
+            return cached;
         }
 
         public override string[] GetUsersInRole(string roleName)

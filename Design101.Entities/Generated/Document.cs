@@ -63,6 +63,12 @@ namespace Design101.Entities
             set;
         }
     
+        public virtual int Size
+        {
+            get;
+            set;
+        }
+    
         public virtual bool Enabled
         {
             get;
@@ -104,16 +110,16 @@ namespace Design101.Entities
     
         private void FixupUser(User previousValue)
         {
-            if (previousValue != null && previousValue.Documents.Contains(this))
+            if (previousValue != null && previousValue.Document.Contains(this))
             {
-                previousValue.Documents.Remove(this);
+                previousValue.Document.Remove(this);
             }
     
             if (User != null)
             {
-                if (!User.Documents.Contains(this))
+                if (!User.Document.Contains(this))
                 {
-                    User.Documents.Add(this);
+                    User.Document.Add(this);
                 }
                 if (UserId != User.UserId)
                 {

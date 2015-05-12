@@ -70,6 +70,7 @@ namespace Design101.WebSite.Areas.Manager.Controllers
                     UserId = user.Id,
                     Name = Path.GetFileNameWithoutExtension(data["Name"]),
                     Path = data["Name"],
+                    Size = Request.Files[0].ContentLength,
                     Enabled = true,
                     Assigned = Context.Current.GetNowUTC
                 };

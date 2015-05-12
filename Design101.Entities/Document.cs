@@ -45,6 +45,10 @@ namespace Design101.Entities
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
         public string Path { get; set; }
 
+        [Display(Name = "Entity_Size", ResourceType = typeof(Ent_DocumentResource))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
+        public int Size { get; set; }
+
         [Display(Name = "Entity_Enabled", ResourceType = typeof(Ent_DocumentResource))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Ent_ValidationResource))]
         public bool Enabled { get; set; }

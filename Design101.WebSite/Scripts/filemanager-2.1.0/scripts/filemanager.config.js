@@ -62,7 +62,7 @@
     },
     "upload": {
         "multiple": true,
-        "number": 5,
+        "number": 1,
         "overwrite": false,
         "imagesOnly": false,
         "fileSizeLimit": 16

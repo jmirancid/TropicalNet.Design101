@@ -124,6 +124,15 @@ namespace Design101.Entities.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Entity_Size {
+            get {
+                return ResourceManager.GetString("Entity_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User.
         /// </summary>
         public static string Entity_User {

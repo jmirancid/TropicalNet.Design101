@@ -27,6 +27,7 @@
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="60" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
           <Property Name="Priority" Type="int" />
           <Property Name="Assigned" Type="datetime" Nullable="false" />
@@ -86,32 +87,18 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Design101Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="Design101Entities" annotation:LazyLoadingEnabled="false">
-          <EntitySet Name="Document" EntityType="Design101Model.Document" />
           <EntitySet Name="Role" EntityType="Design101Model.Role" />
           <EntitySet Name="User" EntityType="Design101Model.User" />
-          <AssociationSet Name="FK_Document_User" Association="Design101Model.FK_Document_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Document" EntitySet="Document" />
-          </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Design101Model.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <EntitySet Name="Document" EntityType="Design101Model.Document" />
+          <AssociationSet Name="FK_Document_User" Association="Design101Model.FK_Document_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Document">
-          <Key>
-            <PropertyRef Name="DocumentId" />
-          </Key>
-          <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="UserId" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Path" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="Enabled" Nullable="false" />
-          <Property Type="Int32" Name="Priority" />
-          <Property Type="DateTime" Name="Assigned" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Design101Model.FK_Document_User" FromRole="Document" ToRole="User" />
-        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="RoleId" />
@@ -138,8 +125,35 @@
           <Property Type="Boolean" Name="Enabled" Nullable="false" />
           <Property Type="DateTime" Name="Registered" Nullable="false" />
           <Property Type="DateTime" Name="Login" />
-          <NavigationProperty Name="Documents" Relationship="Design101Model.FK_Document_User" FromRole="User" ToRole="Document" />
           <NavigationProperty Name="Role" Relationship="Design101Model.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Document" Relationship="Design101Model.FK_Document_User" FromRole="User" ToRole="Document" />
+        </EntityType>
+        <Association Name="FK_User_Role">
+          <End Type="Design101Model.Role" Role="Role" Multiplicity="1" />
+          <End Type="Design101Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Path" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Size" Nullable="false" />
+          <Property Type="Boolean" Name="Enabled" Nullable="false" />
+          <Property Type="Int32" Name="Priority" />
+          <Property Type="DateTime" Name="Assigned" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Design101Model.FK_Document_User" FromRole="Document" ToRole="User" />
         </EntityType>
         <Association Name="FK_Document_User">
           <End Type="Design101Model.User" Role="User" Multiplicity="1" />
@@ -153,38 +167,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Role">
-          <End Type="Design101Model.Role" Role="Role" Multiplicity="1" />
-          <End Type="Design101Model.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="RoleId" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Design101ModelStoreContainer" CdmEntityContainer="Design101Entities">
-          <EntitySetMapping Name="Document">
-            <EntityTypeMapping TypeName="Design101Model.Document">
-              <MappingFragment StoreEntitySet="Document">
-                <ScalarProperty Name="Assigned" ColumnName="Assigned" />
-                <ScalarProperty Name="Priority" ColumnName="Priority" />
-                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
-                <ScalarProperty Name="Path" ColumnName="Path" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="Design101Model.Role">
               <MappingFragment StoreEntitySet="Role">
@@ -213,6 +201,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Document">
+            <EntityTypeMapping TypeName="Design101Model.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="Assigned" ColumnName="Assigned" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -235,16 +238,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Design101Model">
-        <EntityTypeShape EntityType="Design101Model.Document" Width="1.5" PointX="5.25" PointY="1.625" Height="2.7494921874999996" />
         <EntityTypeShape EntityType="Design101Model.Role" Width="1.5" PointX="0.75" PointY="2.125" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="Design101Model.User" Width="1.5" PointX="3" PointY="1" Height="3.9033007812499996" />
-        <AssociationConnector Association="Design101Model.FK_Document_User" >
-          <ConnectorPoint PointX="4.5" PointY="2.99974609375" />
-          <ConnectorPoint PointX="5.25" PointY="2.99974609375" />
-        </AssociationConnector>
         <AssociationConnector Association="Design101Model.FK_User_Role" >
           <ConnectorPoint PointX="2.25" PointY="3.0189925130208337" />
           <ConnectorPoint PointX="3" PointY="3.0189925130208337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Design101Model.Document" Width="1.5" PointX="5.25" PointY="1.5" Height="2.9417936197916656" />
+        <AssociationConnector Association="Design101Model.FK_Document_User" >
+          <ConnectorPoint PointX="4.5" PointY="2.9708968098958328" />
+          <ConnectorPoint PointX="5.25" PointY="2.9708968098958328" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

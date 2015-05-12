@@ -135,6 +135,9 @@
   <data name="Entity_Priority" xml:space="preserve">
     <value>Priority</value>
   </data>
+  <data name="Entity_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
   <data name="Entity_User" xml:space="preserve">
     <value>User</value>
   </data>
