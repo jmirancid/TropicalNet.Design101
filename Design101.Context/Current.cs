@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Security.Principal;
+using System.Web;
 
 namespace Design101.Context
 {
@@ -23,6 +25,17 @@ namespace Design101.Context
             set
             {
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
+            }
+        }
+
+        public static IIdentity Identity
+        {
+            get
+            {
+                if (HttpContext.Current == null)
+                    return new GenericIdentity("Unknown");
+
+                return HttpContext.Current.User.Identity;
             }
         }
     }

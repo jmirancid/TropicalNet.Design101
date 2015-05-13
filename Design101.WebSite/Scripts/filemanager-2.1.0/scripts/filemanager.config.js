@@ -22,7 +22,7 @@
         "fileRoot": "../../Content/Files/",
         "relPath": false,
         "logger": false,
-        "capabilities": ["select", "download", "rename", "delete"],
+        "capabilities": ["select", "download", "rename", "delete", "replace"],
         "plugins": []
     },
     "security": {
@@ -62,7 +62,7 @@
     },
     "upload": {
         "multiple": true,
-        "number": 1,
+        "number": 5,
         "overwrite": false,
         "imagesOnly": false,
         "fileSizeLimit": 16

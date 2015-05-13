@@ -1,0 +1,27 @@
+﻿@using Design101.WebSite.Resources
+@using Design101.WebSite.Extensions
+
+@section Styles
+{
+     <link rel="stylesheet" href="@Url.Content("~/Content/Styles/Register.css")">
+    <style type="text/css">
+        body
+        {
+            padding-top: 60px;
+        }
+    </style>
+}
+
+@section Menu
+{
+    <li><a href="@Url.Action("Index", "Document")"><i class="icon-home icon-white">
+    </i>@Localization.Menu_Document</a></li>
+}
+
+<div class="row">
+    <div class="col-lg-offset-3 col-lg-6">
+        @Html.Profile()
+        <br /><br />
+    </div>
+</div>
+<!--/row -->

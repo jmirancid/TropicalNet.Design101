@@ -1,0 +1,62 @@
+﻿@model Design101.Entities.User
+
+<div class="register-info-wraper">
+    <div id="register-info">
+        <div class="cont2">
+            <div class="thumbnail">
+                <img src="@Url.Content("~/Content/Images/face.jpg")" alt="@Model.Name" class="img-circle">
+            </div>
+            <!-- /thumbnail -->
+            <h2>
+                @Model.Name</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="cont3">
+                    <p>
+                        <ok>Username:</ok>
+                        @Model.Username</p>
+                    <p>
+                        <ok>Mail:</ok>
+                        @Model.Email</p>
+                    <p>
+                        <ok>Location:</ok>
+                        @Model.Location</p>
+                    <p>
+                        <ok>Address:</ok>
+                        @Model.Address</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="cont3">
+                    <p>
+                        <ok>Registered:</ok>
+                        @Model.Registered.ToString("MMMM d, yyyy")</p>
+                    <p>
+                        <ok>Last Login:</ok>
+                        @Model.Login.GetValueOrDefault(DateTime.UtcNow).ToString("MMMM d, yyyy")</p>
+                    <p>
+                        <ok>Phone:</ok>
+                        @Model.Phone</p>
+                    <p>
+                        <ok>Mobile</ok>
+                        @Model.Mobile</p>
+                </div>
+            </div>
+        </div>
+        <!-- /inner row -->
+        <hr>
+        <div class="cont2">
+            <h2>
+                Choose Your Option</h2>
+        </div>
+        <br>
+        <div class="info-user2">
+            <a href="@Url.Action("Edit", "User", new { id = Model.Id })">
+                <span aria-hidden="true" class="li_user fs1"></span></a>
+            <a href="@Url.Action("Index", "Document")">
+                <span aria-hidden="true" class="li_clip fs1"></span></a>
+            <span aria-hidden="true" class="li_mail fs1"></span>
+        </div>
+    </div>
+</div>

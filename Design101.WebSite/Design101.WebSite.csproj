@@ -62,12 +62,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Customer\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Customer\Controllers\DocumentController.cs" />
+    <Compile Include="Areas\Customer\Controllers\UserController.cs" />
     <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Areas\Manager\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Manager\Controllers\DocumentController.cs" />
     <Compile Include="Areas\Manager\Controllers\UserController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
-    <Compile Include="Areas\Manager\Models\ManagerModels.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
@@ -983,14 +985,12 @@
     <Content Include="Views\Account\LogOn.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Customer\Controllers\" />
     <Folder Include="Areas\Customer\Models\" />
-    <Folder Include="Areas\Customer\Views\Shared\" />
+    <Folder Include="Areas\Manager\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1005,9 +1005,7 @@
     <Content Include="Areas\Customer\Views\Web.config" />
     <Content Include="Areas\Manager\Views\Web.config" />
     <Content Include="Areas\Manager\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manager\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\Manager\Views\Shared\_Profile.cshtml" />
     <Content Include="Areas\Manager\Views\User\Create.cshtml" />
     <Content Include="Areas\Manager\Views\User\Index.cshtml" />
     <Content Include="Areas\Manager\Views\User\Details.cshtml" />
@@ -1015,8 +1013,13 @@
     <Content Include="Areas\Manager\Views\User\Delete.cshtml" />
     <Content Include="Areas\Manager\Views\Document\Index.cshtml" />
     <Content Include="Content\Files\README.txt" />
-    <Content Include="Areas\Manager\Views\Shared\_Timer.cshtml" />
     <Content Include="Areas\Manager\Views\Shared\_Activity.cshtml" />
+    <Content Include="Areas\Customer\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Customer\Views\Document\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Manager\Views\Shared\_Profile.cshtml" />
+    <Content Include="Areas\Customer\Views\Shared\_Profile.cshtml" />
     <None Include="Content\Fonts\linecons.eot" />
     <None Include="Content\Fonts\linecons.ttf" />
     <None Include="Content\Fonts\linecons.woff" />
@@ -1244,6 +1247,10 @@
     <None Include="Scripts\filemanager-2.1.0\utils\minify.py" />
     <None Include="Scripts\filemanager-2.1.0\utils\path-info.odt" />
     <None Include="Scripts\filemanager-2.1.0\utils\path-info.pdf" />
+    <Content Include="Views\Shared\_Front.cshtml" />
+    <Content Include="Views\Shared\_Back.cshtml" />
+    <Content Include="Views\Shared\_LogOut.cshtml" />
+    <Content Include="Views\Shared\_Timer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\TropicalNet.Framework\trunk\Framework.Business\Framework.Business.csproj">

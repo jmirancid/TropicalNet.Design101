@@ -1,12 +1,8 @@
 ﻿@using Design101.WebSite.Resources
 @using Design101.WebSite.Extensions
 
-@model Design101.WebSite.Areas.Manager.Models.DashboardModel
-
 @section Styles
 {
-    <link href="@Url.Content("~/Content/Styles/Main.css")" rel="stylesheet" />
-    <link href="@Url.Content("~/Content/Styles/Font.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/Styles/Flexslider.css")" rel="stylesheet" />
     <style type="text/css">
         body
@@ -18,8 +14,6 @@
 
 @section Menu
 {
-    <li class="active"><a href="@Url.Action("Index", "Dashboard")"><i class="icon-home icon-white">
-    </i>@Localization.Menu_Dashboard</a></li>
     <li><a href="@Url.Action("Index", "User")"><i class="icon-home icon-white">
     </i>@Localization.Menu_User</a></li>
     <li><a href="@Url.Action("Index", "Document")"><i class="icon-home icon-white">
@@ -28,7 +22,7 @@
 
 <div class="row">
     <div class="col-sm-3 col-lg-3">
-        @Html.Profile(Model.UserProfile)
+        @Html.Profile()
     </div>
     <!-- DONUT CHART BLOCK -->
     <div class="col-sm-3 col-lg-3">

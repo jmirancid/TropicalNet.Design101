@@ -4,9 +4,9 @@ using System.IO;
 using System.Web.Mvc;
 using Design101.WebSite.Scripts.Filemanager.Connectors.Mvc;
 
-namespace Design101.WebSite.Areas.Manager.Controllers
+namespace Design101.WebSite.Areas.Customer.Controllers
 {
-    [Authorize(Roles = "Manager")]
+    [Authorize(Roles = "Customer")]
     public class DocumentController : FilemanagerController
     {
         private NameValueCollection _fmConfig =

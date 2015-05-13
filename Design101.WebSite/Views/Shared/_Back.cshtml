@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Design101.WebSite.Extensions
+
+@{
     ViewBag.Title = ViewBag.Title ?? ".: 101 AudioDesign - My Dashboard (Manager) :.";
 }
 
@@ -9,6 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="@Url.Content("~/Content/Styles/Bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Styles/Main.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Styles/Font.css")" rel="stylesheet" />
     @RenderSection("Styles", false)
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -37,6 +41,7 @@
                 <ul class="nav navbar-nav">
                     @RenderSection("Menu", false)
                 </ul>
+                @Html.LogOut()
             </div>
         </div>
     </div>

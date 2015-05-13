@@ -21,15 +21,13 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true, null, new { @class = "bg-danger" })
+    @Html.HiddenFor(model => model.UserId)
+    
     <div class="row">
         <div class="col-lg-5">
             <fieldset>
-                <legend>@PersistanceResource.Create @Ent_UserResource._Caption</legend>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.RoleId)
-                    @Html.DropDownListFor(model => model.RoleId, null, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.RoleId, null, new { @class = "text-danger" })
-                </div>
+                <legend>@PersistanceResource.Edit @Ent_UserResource._Caption</legend>
+                @Html.HiddenFor(model => model.RoleId)
                 <div class="form-group">
                     @Html.LabelFor(model => model.Name)
                     @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
@@ -51,7 +49,7 @@
                 </div>
                 <p>
                     <input type="submit" value="@PersistanceResource.Save" />
-                    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-link" })
+                    @Html.ActionLink("Back to Dashboard", "Index", "Dashboard", new { }, new { @class = "btn btn-link" })
                 </p>
             </fieldset>
         </div>

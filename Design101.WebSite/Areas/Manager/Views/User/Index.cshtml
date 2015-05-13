@@ -6,7 +6,6 @@
 
 @section Styles
 {
-    <link href="@Url.Content("~/Content/Styles/Main.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/Styles/Table.css")" rel="stylesheet" />
     <style type="text/css">
         body
@@ -18,8 +17,6 @@
 
 @section Menu
 {
-    <li><a href="@Url.Action("Index", "Dashboard")"><i class="icon-home icon-white">
-    </i>@Localization.Menu_Dashboard</a></li>
     <li class="active"><a href="@Url.Action("Index", "User")"><i class="icon-home icon-white">
     </i>@Localization.Menu_User</a></li>
     <li><a href="@Url.Action("Index", "Document")"><i class="icon-home icon-white">
@@ -86,7 +83,6 @@
 
 @section Scripts
 {
-    <script type="text/javascript" src="@Url.Content("~/Scripts/admin.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/datatables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function () {
