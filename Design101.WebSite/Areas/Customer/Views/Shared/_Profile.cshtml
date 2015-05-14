@@ -54,7 +54,7 @@
         <div class="info-user2">
             <a href="@Url.Action("Edit", "User", new { id = Model.Id })">
                 <span aria-hidden="true" class="li_user fs1"></span></a>
-            <a href="@Url.Action("Index", "Document")">
+            <a href="@Url.Action("Index", "Document", new { exclusiveFolder = Model.Username })/">
                 <span aria-hidden="true" class="li_clip fs1"></span></a>
             <span aria-hidden="true" class="li_mail fs1"></span>
         </div>

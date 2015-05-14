@@ -14,7 +14,7 @@
 
 @section Menu
 {
-    <li><a href="@Url.Action("Index", "Document")"><i class="icon-home icon-white">
+    <li><a href="@Url.Action("Index", "Document", new { exclusiveFolder = Design101.Context.Current.Identity.Name })/"><i class="icon-home icon-white">
     </i>@Localization.Menu_Document</a></li>
 }
 

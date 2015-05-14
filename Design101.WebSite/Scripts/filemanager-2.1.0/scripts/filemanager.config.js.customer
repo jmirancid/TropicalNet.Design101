@@ -1,14 +1,16 @@
+﻿var config = 
 {
 	"_comment": "IMPORTANT : go to the wiki page to know about options configuration https://github.com/simogeo/Filemanager/wiki/Filemanager-configuration-file",
     "options": {
         "culture": "en",
-        "lang": "php",
+        "lang": "mvc",
+        "fileConnector": "../../Customer/Document/Execute",
         "theme": "flat-dark",
         "defaultViewMode": "grid",
         "autoload": true,
         "showFullPath": false,
         "showTitleAttr": false,
-        "browseOnly": false,
+        "browseOnly": true,
         "showConfirmation": true,
         "showThumbs": true,
         "generateThumbnails": true,
@@ -17,8 +19,8 @@
         "fileSorting": "default",
         "chars_only_latin": true,
         "dateFormat": "d M Y H:i",
-        "serverRoot": true,
-        "fileRoot": false,
+        "serverRoot": false,
+        "fileRoot": "../../Content/Files/",
         "relPath": false,
         "logger": false,
         "capabilities": ["select", "download", "rename", "delete", "replace"],
@@ -124,7 +126,7 @@
         ]
     },
     "customScrollbar": {
-    	"enabled": true,
+    	"enabled": false,
     	"theme": "inset-2-dark",
     	"button": true
     },

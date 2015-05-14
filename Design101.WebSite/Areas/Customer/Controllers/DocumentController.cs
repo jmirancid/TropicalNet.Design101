@@ -27,15 +27,15 @@ namespace Design101.WebSite.Areas.Customer.Controllers
 
         public override ActionResult Index(string mode, string path = null)
         {
-            var expandedFolder =
-                Request.QueryString["expandedFolder"];
+            var exclusiveFolder =
+                Request.QueryString["exclusiveFolder"];
 
-            if (!string.IsNullOrWhiteSpace(expandedFolder))
+            if (!string.IsNullOrWhiteSpace(exclusiveFolder))
             {
                 var v = RootPath;
                 var r = Server.MapPath(v);
 
-                var f = Path.Combine(r, expandedFolder);
+                var f = Path.Combine(r, exclusiveFolder);
 
                 if (!Directory.Exists(f))
                 {
