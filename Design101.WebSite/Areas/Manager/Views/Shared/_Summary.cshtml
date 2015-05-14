@@ -7,19 +7,23 @@
     <hr>
     <div class="cont">
         <p>
-            <bold>@Model.Item1</bold>
-            |
-            <ok>@Localization.Menu_User</ok>
+            <a href="@Url.Action("Index", "User")">
+                <bold>@Model.Item1</bold>
+                |
+                <ok>@Localization.Menu_User</ok>
+            </a>
         </p>
         <br>
         <p>
-            <bold>@Model.Item2</bold>
-            | @Localization.Menu_Document</p>
+            <a href="@Url.Action("Index", "Document")"
+                <bold>@Model.Item2</bold>
+                | <span>@Localization.Menu_Document</span>
+            </a>
+        </p>
         <br>
         <p>
             <bold>@Model.Item3</bold>
-            |
-            <span class="text-primary">Mb.</span>
+            | <span class="text-primary">Mb.</span>
         </p>
         <br>
         <p>
