@@ -88,7 +88,7 @@ namespace Design101.WebSite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uploaded Today.
+        ///   Looks up a localized string similar to Document Uploaded Today.
         /// </summary>
         public static string Dashboard_UploadToday {
             get {

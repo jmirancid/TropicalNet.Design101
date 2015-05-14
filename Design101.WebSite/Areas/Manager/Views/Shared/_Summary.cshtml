@@ -9,15 +9,16 @@
         <p>
             <a href="@Url.Action("Index", "User")">
                 <bold>@Model.Item1</bold>
-                |
+                <span style="color:#ffffff;">|</span>
                 <ok>@Localization.Menu_User</ok>
             </a>
         </p>
         <br>
         <p>
-            <a href="@Url.Action("Index", "Document")"
+            <a href="@Url.Action("Index", "Document")">
                 <bold>@Model.Item2</bold>
-                | <span>@Localization.Menu_Document</span>
+                <span style="color:#ffffff;">|</span>
+                <span style="color:#ffffff;">@Localization.Menu_Document</span>
             </a>
         </p>
         <br>
