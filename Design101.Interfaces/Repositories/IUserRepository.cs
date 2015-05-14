@@ -5,5 +5,6 @@ namespace Design101.Interfaces.Repositories
 {
     public interface IUserRepository : IRepository<User>
     {
+        User GetLastLoginUser();
     }
 }

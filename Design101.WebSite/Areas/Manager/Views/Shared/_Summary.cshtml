@@ -1,0 +1,29 @@
+﻿@using Design101.WebSite.Resources
+
+@model Tuple<int, int, double, int>
+
+<div class="dash-unit">
+    <dtitle>@Localization.Dashboard_Summary</dtitle>
+    <hr>
+    <div class="cont">
+        <p>
+            <bold>@Model.Item1</bold>
+            |
+            <ok>@Localization.Menu_User</ok>
+        </p>
+        <br>
+        <p>
+            <bold>@Model.Item2</bold>
+            | @Localization.Menu_Document</p>
+        <br>
+        <p>
+            <bold>@Model.Item3</bold>
+            |
+            <span class="text-primary">Mb.</span>
+        </p>
+        <br>
+        <p>
+            <img src="@Url.Content("~/Content/Images/up-small.png")" alt="" />
+            @Model.Item4 @Localization.Dashboard_UploadToday</p>
+    </div>
+</div>

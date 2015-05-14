@@ -61,11 +61,38 @@ namespace Design101.WebSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Login User.
+        /// </summary>
+        public static string Dashboard_LastLoginUser {
+            get {
+                return ResourceManager.GetString("Dashboard_LastLoginUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Local Time.
         /// </summary>
         public static string Dashboard_LocalTime {
             get {
                 return ResourceManager.GetString("Dashboard_LocalTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        public static string Dashboard_Summary {
+            get {
+                return ResourceManager.GetString("Dashboard_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploaded Today.
+        /// </summary>
+        public static string Dashboard_UploadToday {
+            get {
+                return ResourceManager.GetString("Dashboard_UploadToday", resourceCulture);
             }
         }
         

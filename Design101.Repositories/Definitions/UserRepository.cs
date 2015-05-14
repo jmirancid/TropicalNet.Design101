@@ -13,5 +13,11 @@ namespace Design101.Repositories.Definitions
                         .Include(x => x.Role)
                         .FirstOrDefault(predicate);
         }
+
+        public User GetLastLoginUser()
+        {
+            return base.AllBy(x => x.RoleId == (int)Role_Enum.Customer)
+                .OrderByDescending(x => x.Login).FirstOrDefault();
+        }
     }
 }

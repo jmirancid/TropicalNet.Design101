@@ -1,0 +1,19 @@
+﻿@using Design101.WebSite.Resources
+
+@model Design101.Entities.User
+
+<!-- LAST LOGIN USER BLOCK -->
+<div class="half-unit">
+    <dtitle>@Localization.Dashboard_LastLoginUser</dtitle>
+    <hr>
+    <div class="cont2">
+        <img src="@Url.Content("~/Content/Images/user-avatar.jpg")" alt="" />
+        <br>
+        <br>
+        <p>
+            @Model.Name</p>
+        <p>
+            <bold>@Model.Login.GetValueOrDefault(DateTime.MinValue).ToString("MMMM dd, yyyy")</bold>
+        </p>
+    </div>
+</div>

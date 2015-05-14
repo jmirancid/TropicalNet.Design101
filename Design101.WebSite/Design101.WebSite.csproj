@@ -728,6 +728,8 @@
     <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.js" />
     <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.liveSearch.js" />
     <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.liveSearch.min.js" />
+    <Content Include="Areas\Manager\Views\Shared\_LastLoginUser.cshtml" />
+    <Content Include="Areas\Manager\Views\Shared\_Summary.cshtml" />
     <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.js.customer" />
     <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.js.manager" />
     <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.min.js" />
