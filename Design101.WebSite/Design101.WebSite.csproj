@@ -746,8 +746,8 @@
     <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.liveSearch.min.js" />
     <Content Include="Areas\Manager\Views\Shared\_LastLoginUser.cshtml" />
     <Content Include="Areas\Manager\Views\Shared\_Summary.cshtml" />
-    <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.js.customer" />
-    <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.js.manager" />
+    <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.customer.js" />
+    <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.manager.js" />
     <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.min.js" />
     <Content Include="Scripts\filemanager-2.1.0\scripts\jquery-1.8.3.min.js" />
     <Content Include="Scripts\filemanager-2.1.0\scripts\jquery.contextmenu\images\cut.png" />
@@ -1234,9 +1234,9 @@
     <None Include="Scripts\filemanager-2.1.0\scripts\dropzone\src\dropzone.coffee" />
     <None Include="Scripts\filemanager-2.1.0\scripts\dropzone\test.sh" />
     <None Include="Scripts\filemanager-2.1.0\scripts\dropzone\test\test.coffee" />
-    <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.js.default" />
-    <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.min.js.customer" />
-    <None Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.min.js.manager" />
+    <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.js.default" />
+    <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.customer.min.js" />
+    <Content Include="Scripts\filemanager-2.1.0\scripts\filemanager.config.manager.min.js" />
     <None Include="Scripts\filemanager-2.1.0\scripts\zeroclipboard\.gitignore" />
     <None Include="Scripts\filemanager-2.1.0\scripts\zeroclipboard\.jshintrc" />
     <None Include="Scripts\filemanager-2.1.0\scripts\zeroclipboard\.npmignore" />
