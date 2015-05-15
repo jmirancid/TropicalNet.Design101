@@ -64,6 +64,9 @@ namespace Design101.WebSite.Extensions
             var m =
                 _bizUser.Value.GetLastLoginUser();
 
+            if (m == null) 
+                return null;
+
             return htmlHelper.Partial("_LastLoginUser", m);
         }
     }

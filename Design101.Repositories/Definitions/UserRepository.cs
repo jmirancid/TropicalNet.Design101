@@ -7,6 +7,13 @@ namespace Design101.Repositories.Definitions
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
+        public override IQueryable<User> All()
+        {
+            return base.Context.User
+                        .Include(x => x.Role)
+                        .OrderBy(x => x.RoleId).ThenBy(x => x.Username);
+        }
+
         public override User GetBy(System.Linq.Expressions.Expression<System.Func<User, bool>> predicate)
         {
             return base.Context.User

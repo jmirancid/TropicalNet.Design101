@@ -135,7 +135,6 @@ Global
 		{A2724EE3-DCFD-48B0-BB07-D97632E145B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2724EE3-DCFD-48B0-BB07-D97632E145B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2724EE3-DCFD-48B0-BB07-D97632E145B0}.Stage|Any CPU.ActiveCfg = Stage|Any CPU
-		{A2724EE3-DCFD-48B0-BB07-D97632E145B0}.Stage|Any CPU.Build.0 = Stage|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
